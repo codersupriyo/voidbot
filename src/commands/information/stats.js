@@ -32,7 +32,7 @@ class StatsCommand extends Command {
 			.addField('Uptime', `${uptime}`)
 			.addField('Discord', `\`\`\`User: ${this.client.users.cache.size}\nServer: ${this.client.guilds.cache.size}\nChannel: ${this.client.channels.cache.size} \`\`\``)
 			.addField('Modules', `\`\`\`Discord.js: v${Discord.version}\nAkairo: v${Akairo.version}\nNodeJS: ${process.version} \`\`\``)
-			.setFooter('© 2020 Sharingan v1.0.0')
+			.setFooter('© 2020 VoidBot v1.0.0')
 			.setColor('RED');
 
 		return message.util.send(embed);
