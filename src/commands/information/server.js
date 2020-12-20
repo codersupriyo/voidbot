@@ -59,8 +59,8 @@ class ServerInfoCommand extends Command {
 			.setDescription(
 				[
 					`• **Owner**: <@${message.guild.ownerID}>`,
-					`• **Users**: ${message.guild.members.cache.filter(member => !member.user.bot).size}`,
-					`• **BOTs**: ${message.guild.members.cache.filter(member => member.user.bot).size}`,
+					`• **Users**: ${message.guild.memberCount}`,
+					`• **BOTs**: ${await message.guild.members.fetch({ cache: false }).then(m => m.filter(member => member.user.bot).size)}`,
 					`• **Roles**: ${message.guild.roles.cache.size}`,
 					`• **TextChannels**: ${message.guild.channels.cache.filter(c => c.type === 'text').size}`,
 					`• **VoiceChannels**: ${message.guild.channels.cache.filter(c => c.type === 'voice').size}`,
@@ -69,7 +69,7 @@ class ServerInfoCommand extends Command {
 					`• **Verification**: ${HUMAN_LEVELS[message.guild.verificationLevel]}`
 				]
 			)
-			.setFooter('© 2020 Sharingan', this.client.user.avatarURL());
+			.setFooter(`ID: ${message.guild.id}`);
 		return message.util.send(embed);
 	}
 }
