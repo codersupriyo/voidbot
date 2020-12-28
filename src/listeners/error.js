@@ -12,7 +12,7 @@ class ErrorEvent extends Listener {
 		console.error(error);
 
 		if (message.guild ? message.channel.permissionsFor(this.client.user).has('SEND_MESSAGES') : true) {
-			message.channel.send(`js\n\`\`\`${error.toString()}\`\`\``);
+			message.channel.send(`Unfortunately, an error has occurred:\n\`\`\`js\n${error.toString()}\`\`\``);
 		}
 
 
@@ -22,7 +22,7 @@ class ErrorEvent extends Listener {
 			return webhookClient.send(
 				`**Guild:** ${message.guild.name} (${message.guild.id})\n` +
                 `**Command:** ${command}\n` +
-				`**Message link:** __[Click here](<${message.url}>)__` +
+				`**Message link:** __[Click here](<${message.url}>)__\n` +
 				`**Error:**\n\`\`\`js\n${error.toString()}\`\`\``
 			);
 		}
