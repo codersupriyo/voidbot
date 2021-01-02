@@ -14,7 +14,7 @@ class GuildMemberRemoveListener extends Listener {
 			.setFooter('User Left')
 			.setColor('RED')
 			.setTimestamp();
-		return member.guild.channels.cache.get('779726621971972107').send(embed);
+		return member.guild.channels.cache.get('788417545312010271').send(embed);
 	}
 }
 

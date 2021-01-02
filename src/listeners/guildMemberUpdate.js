@@ -18,13 +18,13 @@ class guildMemberUpdateEvent extends Listener {
 			this.client.channels.cache.get('779726621971972107').send(`${oldMember.user}'s nickname changed from **${oldMember.nickname}** to **${newMember.nickname}**`);
 		} */
 		if (newMember.roles.cache.filter(role => !oldMember.roles.cache.has(role.id)).size) {
-			this.client.channels.cache.get('779726621971972107').send(
+			this.client.channels.cache.get('781510753743929394').send(
 				`${newMember.roles.cache.filter(role => !oldMember.roles.cache.has(role.id)).map(role => role).join(', ')} role was added to ${oldMember.user}`
 			);
 		}
 
 		if (oldMember.roles.cache.filter(role => !newMember.roles.cache.has(role.id)).size) {
-			this.client.channels.cache.get('779726621971972107').send(
+			this.client.channels.cache.get('781510753743929394').send(
 				`${oldMember.roles.cache.filter(role => !newMember.roles.cache.has(role.id)).map(role => role).join(', ')} role was removed from ${oldMember.user}`
 			);
 		}

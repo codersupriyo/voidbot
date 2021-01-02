@@ -32,7 +32,7 @@ class MemberJoinEvent extends Listener {
 		ctx.drawImage(avatar, 460, 220, 250, 250);
 		const attachment = new MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-		this.client.channels.cache.get('779726621971972107').send(
+		this.client.channels.cache.get('788417545312010271').send(
 			`• ${member.user}, don't forget to read <#752037268528693309>\n• Chat freely in<#751279077385830451>\n• Have Fun In Our Server!`,
 			attachment
 		);
