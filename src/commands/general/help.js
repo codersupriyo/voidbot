@@ -60,13 +60,6 @@ class HelpCommand extends Command {
 					.replace(/\b(\w)/g, char => char.toUpperCase())}\`` || null);
 		}
 
-		for (const field of description.fields) embed.addField(field.name, field.value);
-
-
-		if (description.image.length) {
-			embed.setImage(description.image);
-		}
-
 		return message.util.send({ embed });
 	}
 
