@@ -1,5 +1,5 @@
 const { Command } = require('discord-akairo');
-const { MessageEmbed } = require('discord.js');
+const { Message, MessageEmbed, User } = require('discord.js');
 
 class HistoryCommand extends Command {
 	constructor() {
