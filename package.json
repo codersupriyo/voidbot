@@ -29,5 +29,8 @@
     "os-utils": "0.0.14",
     "request": "^2.88.2",
     "winston": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=14.x"
   }
 }
