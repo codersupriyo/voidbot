@@ -26,14 +26,12 @@ class StatsCommand extends Command {
 
 	async exec(message) {
 		const uptime = moment.duration(this.client.uptime).format('D [days], H [hrs], m [mins]');
-		const embed = new MessageEmbed()
-			.setAuthor('Sharingan Statistics', this.client.user.avatarURL())
+		const embed = new MessageEmbed().setColor('RED')
+			.setAuthor('VoidBOT Statistics', this.client.user.avatarURL())
 			.addField('Memory', `\`\`\`Free: ${Math.round(os.freemem())}MB\nUsed: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB\`\`\``)
 			.addField('Uptime', `${uptime}`)
 			.addField('Discord', `\`\`\`User: ${this.client.users.cache.size}\nServer: ${this.client.guilds.cache.size}\nChannel: ${this.client.channels.cache.size} \`\`\``)
-			.addField('Modules', `\`\`\`Discord.js: v${Discord.version}\nAkairo: v${Akairo.version}\nNodeJS: ${process.version} \`\`\``)
-			.setFooter('© 2020 VoidBot v1.0.0')
-			.setColor('RED');
+			.addField('Modules', `\`\`\`Discord.js: v${Discord.version}\nAkairo: v${Akairo.version}\nNodeJS: ${process.version} \`\`\``);
 
 		return message.util.send(embed);
 	}
