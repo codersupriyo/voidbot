@@ -11,7 +11,7 @@ class ReadyEvent extends Listener {
 
 	async exec() {
 		// Client activity
-		this.client.user.setActivity('discord.js',
+		this.client.user.setActivity('The Void',
 			{
 				type: 'PLAYING'
 			});
