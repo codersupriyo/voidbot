@@ -1,6 +1,6 @@
 const { Listener } = require('discord-akairo');
 const { MessageAttachment } = require('discord.js');
-const Canvas = require('canvas');
+// const Canvas = require('canvas');
 
 class MemberJoinEvent extends Listener {
 	constructor() {
@@ -11,7 +11,7 @@ class MemberJoinEvent extends Listener {
 	}
 
 	async exec(member) {
-		const canvas = Canvas.createCanvas(1207, 679);
+	/* 	const canvas = Canvas.createCanvas(1207, 679);
 		const ctx = canvas.getContext('2d');
 
 		// Background image
@@ -31,10 +31,9 @@ class MemberJoinEvent extends Listener {
 		// Draw a shape onto the main canvas
 		ctx.drawImage(avatar, 460, 220, 250, 250);
 		const attachment = new MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-
+ */
 		this.client.channels.cache.get('788417545312010271').send(
-			`• ${member.user}, don't forget to read <#752037268528693309>\n• Chat freely in<#751279077385830451>\n• Have Fun In Our Server!`,
-			attachment
+			`• ${member.user}, don't forget to read <#752037268528693309>\n• Chat freely in<#751279077385830451>\n• Have Fun In Our Server!`
 		);
 	}
 }
