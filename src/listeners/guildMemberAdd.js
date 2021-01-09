@@ -32,9 +32,11 @@ class MemberJoinEvent extends Listener {
 		ctx.drawImage(avatar, 460, 220, 250, 250);
 		const attachment = new MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
  */
-		this.client.channels.cache.get('788417545312010271').send(
-			`• ${member.user}, don't forget to read <#752037268528693309>\n• Chat freely in<#751279077385830451>\n• Have Fun In Our Server!`
-		);
+		const embed = this.client.util.embed().setAuthor(`${member.user.tag} (${member.user.id})`, member.user.displayAvatarURL())
+			.setFooter('User Joined')
+			.setColor('GREEN')
+			.setTimestamp();
+		return member.guild.channels.cache.get('788417545312010271').send(embed);
 	}
 }
 
